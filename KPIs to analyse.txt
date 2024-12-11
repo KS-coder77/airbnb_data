@@ -1,0 +1,109 @@
+When analyzing an Airbnb pricing dataset for properties in NYC, the key performance indicators (KPIs) will depend on the specific goals of the analysis, such as pricing optimization, occupancy rates, or competitive benchmarking. Below are potential KPIs and metrics to observe based on the dataset fields provided:
+
+---
+
+### **1. Pricing KPIs**
+- **Average Price per Property**: 
+  - Formula: `price.mean()`
+  - Insights: Understand the general pricing trend across properties.
+  
+- **Median Price per Room Type**: 
+  - Group by `room_type` and calculate median price.
+  - Insights: Helps identify which room types (e.g., Entire home/apt, Private room) are priced higher or lower.
+
+- **Price Distribution by Neighborhood Group**:
+  - Group by `neighbourhood_group` and calculate average or median price.
+  - Insights: Compare average prices across NYC boroughs (e.g., Manhattan, Brooklyn).
+
+- **Price per Review Ratio**:
+  - Formula: `price / number_of_reviews`
+  - Insights: Evaluate whether higher-priced listings have proportionately higher engagement (reviews).
+
+---
+
+### **2. Occupancy and Availability KPIs**
+- **Occupancy Proxy (Availability)**:
+  - Use `availability_365` as a proxy for how frequently a property is booked.
+  - Insights: High availability could indicate low demand or high supply in certain areas.
+
+- **Booking Trends by Minimum Nights**:
+  - Analyze how `minimum_nights` affects booking behavior.
+  - Insights: Properties with higher `minimum_nights` might appeal to long-term renters but may deter short-term visitors.
+
+---
+
+### **3. Host Performance KPIs**
+- **Listings per Host**:
+  - Use `calculated_host_listings_count` to determine host portfolio size.
+  - Insights: Identify superhosts or large-scale operators managing multiple properties.
+
+- **Review Frequency**:
+  - Formula: `reviews_per_month.mean()`
+  - Insights: Indicates guest engagement and host responsiveness.
+
+- **Last Review Activity**:
+  - Analyze `last_review` to see how active hosts are in engaging with guests.
+  - Insights: Active hosts are likely to attract more bookings and maintain higher ratings.
+
+---
+
+### **4. Location-Specific KPIs**
+- **Price by Neighborhood**:
+  - Group by `neighbourhood` and analyze price trends.
+  - Insights: Identify high-demand neighborhoods and how they affect pricing.
+
+- **Proximity Analysis**:
+  - Use `latitude` and `longitude` to calculate proximity to landmarks or transportation hubs.
+  - Insights: Properties closer to key locations might justify higher pricing.
+
+- **Room Type Popularity by Neighborhood**:
+  - Group by `neighbourhood` and `room_type` to analyze the prevalence of specific room types.
+  - Insights: Understand how location influences the types of accommodations offered.
+
+---
+
+### **5. Review and Guest Engagement KPIs**
+- **Number of Reviews per Property**:
+  - Formula: `number_of_reviews.mean()`
+  - Insights: Gauge guest satisfaction and popularity of listings.
+
+- **Reviews per Month Trend**:
+  - Calculate averages or visualize trends over time using `reviews_per_month`.
+  - Insights: Understand seasonality or long-term demand shifts.
+
+- **Review-to-Booking Ratio** (Approximation):
+  - Formula: `number_of_reviews / availability_365`
+  - Insights: Estimate how frequently bookings translate to reviews.
+
+---
+
+### **6. Revenue-Related KPIs**
+- **Estimated Annual Revenue per Listing**:
+  - Formula: `price * reviews_per_month * 12`
+  - Insights: Provides a rough estimate of potential income for a listing.
+
+- **Revenue per Neighborhood Group**:
+  - Group by `neighbourhood_group` and calculate estimated revenue.
+  - Insights: Identify the boroughs with the highest earning potential.
+
+---
+
+### **7. Market Competitiveness KPIs**
+- **Room Type Saturation**:
+  - Calculate the percentage of each `room_type` in the dataset.
+  - Insights: Understand competition within room types in different areas.
+
+- **Pricing Outliers**:
+  - Use statistical methods (e.g., interquartile range) to identify over- or underpriced properties.
+  - Insights: Detect properties significantly deviating from the average.
+
+---
+
+### Advanced Considerations:
+- **Time Series Analysis**: Use `last_review` and `reviews_per_month` to analyze trends over time.
+- **Clustering Analysis**: Use `latitude`, `longitude`, and `price` to cluster properties geographically and identify hotspots.
+- **Seasonality Effects**: Incorporate external data (e.g., events, tourism trends) to explain variations in `reviews_per_month` or `availability_365`.
+
+---
+
+Would you like to focus on a specific aspect, such as pricing optimization, occupancy rates, or neighborhood analysis? Let me know, and I can provide tailored steps!
